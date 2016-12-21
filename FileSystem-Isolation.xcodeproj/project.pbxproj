@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F97946991E07C17600F581AD /* VmPmap.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946711E07C17600F581AD /* VmPmap.h */; };
+		F979469A1E07C17600F581AD /* VmPmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946721E07C17600F581AD /* VmPmap.cpp */; };
+		F979469B1E07C17600F581AD /* VFSHooks.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946731E07C17600F581AD /* VFSHooks.h */; };
+		F979469C1E07C17600F581AD /* VFSHooks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946741E07C17600F581AD /* VFSHooks.cpp */; };
+		F979469F1E07C17600F581AD /* Kauth.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946771E07C17600F581AD /* Kauth.h */; };
+		F97946A01E07C17600F581AD /* Kauth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946781E07C17600F581AD /* Kauth.cpp */; };
+		F97946A11E07C17600F581AD /* FsdFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946791E07C17600F581AD /* FsdFilter.h */; };
+		F97946A21E07C17600F581AD /* FsdFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F979467A1E07C17600F581AD /* FsdFilter.cpp */; };
+		F97946A31E07C17600F581AD /* FltFakeFSD.h in Headers */ = {isa = PBXBuildFile; fileRef = F979467B1E07C17600F581AD /* FltFakeFSD.h */; };
+		F97946A41E07C17600F581AD /* FltFakeFSD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F979467C1E07C17600F581AD /* FltFakeFSD.cpp */; };
+		F97946A51E07C17600F581AD /* distorm.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946801E07C17600F581AD /* distorm.h */; };
+		F97946A61E07C17600F581AD /* mnemonics.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946811E07C17600F581AD /* mnemonics.h */; };
+		F97946A71E07C17600F581AD /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946831E07C17600F581AD /* config.h */; };
+		F97946A81E07C17600F581AD /* decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946841E07C17600F581AD /* decoder.c */; };
+		F97946A91E07C17600F581AD /* decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946851E07C17600F581AD /* decoder.h */; };
+		F97946AA1E07C17600F581AD /* distorm.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946861E07C17600F581AD /* distorm.c */; };
+		F97946AB1E07C17600F581AD /* instructions.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946871E07C17600F581AD /* instructions.c */; };
+		F97946AC1E07C17700F581AD /* instructions.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946881E07C17600F581AD /* instructions.h */; };
+		F97946AD1E07C17700F581AD /* insts.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946891E07C17600F581AD /* insts.c */; };
+		F97946AE1E07C17700F581AD /* insts.h in Headers */ = {isa = PBXBuildFile; fileRef = F979468A1E07C17600F581AD /* insts.h */; };
+		F97946AF1E07C17700F581AD /* mnemonics.c in Sources */ = {isa = PBXBuildFile; fileRef = F979468B1E07C17600F581AD /* mnemonics.c */; };
+		F97946B01E07C17700F581AD /* operands.c in Sources */ = {isa = PBXBuildFile; fileRef = F979468C1E07C17600F581AD /* operands.c */; };
+		F97946B11E07C17700F581AD /* operands.h in Headers */ = {isa = PBXBuildFile; fileRef = F979468D1E07C17600F581AD /* operands.h */; };
+		F97946B21E07C17700F581AD /* prefix.c in Sources */ = {isa = PBXBuildFile; fileRef = F979468E1E07C17600F581AD /* prefix.c */; };
+		F97946B31E07C17700F581AD /* prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = F979468F1E07C17600F581AD /* prefix.h */; };
+		F97946B41E07C17700F581AD /* textdefs.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946901E07C17600F581AD /* textdefs.c */; };
+		F97946B51E07C17700F581AD /* textdefs.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946911E07C17600F581AD /* textdefs.h */; };
+		F97946B61E07C17700F581AD /* wstring.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946921E07C17600F581AD /* wstring.c */; };
+		F97946B71E07C17700F581AD /* wstring.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946931E07C17600F581AD /* wstring.h */; };
+		F97946B81E07C17700F581AD /* x86defs.c in Sources */ = {isa = PBXBuildFile; fileRef = F97946941E07C17600F581AD /* x86defs.c */; };
+		F97946B91E07C17700F581AD /* x86defs.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946951E07C17600F581AD /* x86defs.h */; };
+		F97946BA1E07C17700F581AD /* CommonHashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946961E07C17600F581AD /* CommonHashTable.h */; };
+		F97946BB1E07C17700F581AD /* CommonHashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946971E07C17600F581AD /* CommonHashTable.cpp */; };
+		F97946BC1E07C17700F581AD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946981E07C17600F581AD /* Common.h */; };
+		F97946C31E07C33600F581AD /* VifUndocumentedQuirks.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946BD1E07C33600F581AD /* VifUndocumentedQuirks.h */; };
+		F97946C41E07C33600F581AD /* VifUndocumentedQuirks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946BE1E07C33600F581AD /* VifUndocumentedQuirks.cpp */; };
+		F97946C51E07C33600F581AD /* VifSupportingCode.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946BF1E07C33600F581AD /* VifSupportingCode.h */; };
+		F97946C61E07C33600F581AD /* VifSupportingCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946C01E07C33600F581AD /* VifSupportingCode.cpp */; };
+		F97946C71E07C33600F581AD /* VifSparseFile.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946C11E07C33600F581AD /* VifSparseFile.h */; };
+		F97946C81E07C33600F581AD /* VifSparseFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946C21E07C33600F581AD /* VifSparseFile.cpp */; };
+		F97946CB1E07C42A00F581AD /* VNodeHook.h in Headers */ = {isa = PBXBuildFile; fileRef = F97946C91E07C42A00F581AD /* VNodeHook.h */; };
+		F97946CC1E07C42A00F581AD /* VNodeHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97946CA1E07C42A00F581AD /* VNodeHook.cpp */; };
+		F9FC694C1E080EDF00914367 /* VifCoveringVnode.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC694A1E080EDF00914367 /* VifCoveringVnode.h */; };
+		F9FC694D1E080EDF00914367 /* VifCoveringVnode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9FC694B1E080EDF00914367 /* VifCoveringVnode.cpp */; };
+		F9FC69501E08103300914367 /* VifIOVnode.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC694E1E08103300914367 /* VifIOVnode.h */; };
+		F9FC69511E08103300914367 /* VifIOVnode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9FC694F1E08103300914367 /* VifIOVnode.cpp */; };
+		F9FC69541E08156900914367 /* VifVnodeHashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC69521E08156900914367 /* VifVnodeHashTable.h */; };
+		F9FC69551E08156900914367 /* VifVnodeHashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9FC69531E08156900914367 /* VifVnodeHashTable.cpp */; };
+		F9FC69581E081F0100914367 /* md5_hash.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC69561E081F0100914367 /* md5_hash.h */; };
+		F9FC69591E081F0100914367 /* md5_hash.c in Sources */ = {isa = PBXBuildFile; fileRef = F9FC69571E081F0100914367 /* md5_hash.c */; };
+		F9FC695C1E0857DE00914367 /* VifVfsMntHook.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC695A1E0857DE00914367 /* VifVfsMntHook.h */; };
+		F9FC695D1E0857DE00914367 /* VifVfsMntHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9FC695B1E0857DE00914367 /* VifVfsMntHook.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F97946641E07C0B700F581AD /* FileSystem-Isolation.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FileSystem-Isolation.kext"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F979466B1E07C0B700F581AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F97946711E07C17600F581AD /* VmPmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VmPmap.h; sourceTree = "<group>"; };
+		F97946721E07C17600F581AD /* VmPmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VmPmap.cpp; sourceTree = "<group>"; };
+		F97946731E07C17600F581AD /* VFSHooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VFSHooks.h; sourceTree = "<group>"; };
+		F97946741E07C17600F581AD /* VFSHooks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VFSHooks.cpp; sourceTree = "<group>"; };
+		F97946771E07C17600F581AD /* Kauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kauth.h; sourceTree = "<group>"; };
+		F97946781E07C17600F581AD /* Kauth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Kauth.cpp; sourceTree = "<group>"; };
+		F97946791E07C17600F581AD /* FsdFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsdFilter.h; sourceTree = "<group>"; };
+		F979467A1E07C17600F581AD /* FsdFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FsdFilter.cpp; sourceTree = "<group>"; };
+		F979467B1E07C17600F581AD /* FltFakeFSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FltFakeFSD.h; sourceTree = "<group>"; };
+		F979467C1E07C17600F581AD /* FltFakeFSD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FltFakeFSD.cpp; sourceTree = "<group>"; };
+		F97946801E07C17600F581AD /* distorm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = distorm.h; sourceTree = "<group>"; };
+		F97946811E07C17600F581AD /* mnemonics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnemonics.h; sourceTree = "<group>"; };
+		F97946831E07C17600F581AD /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		F97946841E07C17600F581AD /* decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decoder.c; sourceTree = "<group>"; };
+		F97946851E07C17600F581AD /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder.h; sourceTree = "<group>"; };
+		F97946861E07C17600F581AD /* distorm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = distorm.c; sourceTree = "<group>"; };
+		F97946871E07C17600F581AD /* instructions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = instructions.c; sourceTree = "<group>"; };
+		F97946881E07C17600F581AD /* instructions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instructions.h; sourceTree = "<group>"; };
+		F97946891E07C17600F581AD /* insts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = insts.c; sourceTree = "<group>"; };
+		F979468A1E07C17600F581AD /* insts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = insts.h; sourceTree = "<group>"; };
+		F979468B1E07C17600F581AD /* mnemonics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mnemonics.c; sourceTree = "<group>"; };
+		F979468C1E07C17600F581AD /* operands.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = operands.c; sourceTree = "<group>"; };
+		F979468D1E07C17600F581AD /* operands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = operands.h; sourceTree = "<group>"; };
+		F979468E1E07C17600F581AD /* prefix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prefix.c; sourceTree = "<group>"; };
+		F979468F1E07C17600F581AD /* prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.h; sourceTree = "<group>"; };
+		F97946901E07C17600F581AD /* textdefs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = textdefs.c; sourceTree = "<group>"; };
+		F97946911E07C17600F581AD /* textdefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textdefs.h; sourceTree = "<group>"; };
+		F97946921E07C17600F581AD /* wstring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wstring.c; sourceTree = "<group>"; };
+		F97946931E07C17600F581AD /* wstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wstring.h; sourceTree = "<group>"; };
+		F97946941E07C17600F581AD /* x86defs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x86defs.c; sourceTree = "<group>"; };
+		F97946951E07C17600F581AD /* x86defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86defs.h; sourceTree = "<group>"; };
+		F97946961E07C17600F581AD /* CommonHashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHashTable.h; sourceTree = "<group>"; };
+		F97946971E07C17600F581AD /* CommonHashTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonHashTable.cpp; sourceTree = "<group>"; };
+		F97946981E07C17600F581AD /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		F97946BD1E07C33600F581AD /* VifUndocumentedQuirks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifUndocumentedQuirks.h; sourceTree = "<group>"; };
+		F97946BE1E07C33600F581AD /* VifUndocumentedQuirks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VifUndocumentedQuirks.cpp; sourceTree = "<group>"; };
+		F97946BF1E07C33600F581AD /* VifSupportingCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifSupportingCode.h; sourceTree = "<group>"; };
+		F97946C01E07C33600F581AD /* VifSupportingCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VifSupportingCode.cpp; sourceTree = "<group>"; };
+		F97946C11E07C33600F581AD /* VifSparseFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifSparseFile.h; sourceTree = "<group>"; };
+		F97946C21E07C33600F581AD /* VifSparseFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VifSparseFile.cpp; sourceTree = "<group>"; };
+		F97946C91E07C42A00F581AD /* VNodeHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VNodeHook.h; sourceTree = "<group>"; };
+		F97946CA1E07C42A00F581AD /* VNodeHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = VNodeHook.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		F9FC694A1E080EDF00914367 /* VifCoveringVnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifCoveringVnode.h; sourceTree = "<group>"; };
+		F9FC694B1E080EDF00914367 /* VifCoveringVnode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = VifCoveringVnode.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		F9FC694E1E08103300914367 /* VifIOVnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifIOVnode.h; sourceTree = "<group>"; };
+		F9FC694F1E08103300914367 /* VifIOVnode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = VifIOVnode.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		F9FC69521E08156900914367 /* VifVnodeHashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifVnodeHashTable.h; sourceTree = "<group>"; };
+		F9FC69531E08156900914367 /* VifVnodeHashTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VifVnodeHashTable.cpp; sourceTree = "<group>"; };
+		F9FC69561E081F0100914367 /* md5_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5_hash.h; sourceTree = "<group>"; };
+		F9FC69571E081F0100914367 /* md5_hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5_hash.c; sourceTree = "<group>"; };
+		F9FC695A1E0857DE00914367 /* VifVfsMntHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VifVfsMntHook.h; sourceTree = "<group>"; };
+		F9FC695B1E0857DE00914367 /* VifVfsMntHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VifVfsMntHook.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F97946601E07C0B700F581AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F979465A1E07C0B700F581AD = {
+			isa = PBXGroup;
+			children = (
+				F97946661E07C0B700F581AD /* FileSystem-Isolation */,
+				F97946651E07C0B700F581AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F97946651E07C0B700F581AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F97946641E07C0B700F581AD /* FileSystem-Isolation.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F97946661E07C0B700F581AD /* FileSystem-Isolation */ = {
+			isa = PBXGroup;
+			children = (
+				F9FC695A1E0857DE00914367 /* VifVfsMntHook.h */,
+				F9FC695B1E0857DE00914367 /* VifVfsMntHook.cpp */,
+				F9FC69561E081F0100914367 /* md5_hash.h */,
+				F9FC69571E081F0100914367 /* md5_hash.c */,
+				F9FC69521E08156900914367 /* VifVnodeHashTable.h */,
+				F9FC69531E08156900914367 /* VifVnodeHashTable.cpp */,
+				F9FC694E1E08103300914367 /* VifIOVnode.h */,
+				F9FC694F1E08103300914367 /* VifIOVnode.cpp */,
+				F9FC694A1E080EDF00914367 /* VifCoveringVnode.h */,
+				F9FC694B1E080EDF00914367 /* VifCoveringVnode.cpp */,
+				F97946BD1E07C33600F581AD /* VifUndocumentedQuirks.h */,
+				F97946BE1E07C33600F581AD /* VifUndocumentedQuirks.cpp */,
+				F97946BF1E07C33600F581AD /* VifSupportingCode.h */,
+				F97946C01E07C33600F581AD /* VifSupportingCode.cpp */,
+				F97946C11E07C33600F581AD /* VifSparseFile.h */,
+				F97946C21E07C33600F581AD /* VifSparseFile.cpp */,
+				F97946711E07C17600F581AD /* VmPmap.h */,
+				F97946721E07C17600F581AD /* VmPmap.cpp */,
+				F97946731E07C17600F581AD /* VFSHooks.h */,
+				F97946741E07C17600F581AD /* VFSHooks.cpp */,
+				F97946C91E07C42A00F581AD /* VNodeHook.h */,
+				F97946CA1E07C42A00F581AD /* VNodeHook.cpp */,
+				F97946771E07C17600F581AD /* Kauth.h */,
+				F97946781E07C17600F581AD /* Kauth.cpp */,
+				F97946791E07C17600F581AD /* FsdFilter.h */,
+				F979467A1E07C17600F581AD /* FsdFilter.cpp */,
+				F979467B1E07C17600F581AD /* FltFakeFSD.h */,
+				F979467C1E07C17600F581AD /* FltFakeFSD.cpp */,
+				F979467D1E07C17600F581AD /* distorm */,
+				F97946961E07C17600F581AD /* CommonHashTable.h */,
+				F97946971E07C17600F581AD /* CommonHashTable.cpp */,
+				F97946981E07C17600F581AD /* Common.h */,
+				F979466B1E07C0B700F581AD /* Info.plist */,
+			);
+			path = "FileSystem-Isolation";
+			sourceTree = "<group>";
+		};
+		F979467D1E07C17600F581AD /* distorm */ = {
+			isa = PBXGroup;
+			children = (
+				F979467E1E07C17600F581AD /* distorm3 */,
+			);
+			path = distorm;
+			sourceTree = "<group>";
+		};
+		F979467E1E07C17600F581AD /* distorm3 */ = {
+			isa = PBXGroup;
+			children = (
+				F979467F1E07C17600F581AD /* include */,
+				F97946821E07C17600F581AD /* src */,
+			);
+			path = distorm3;
+			sourceTree = "<group>";
+		};
+		F979467F1E07C17600F581AD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F97946801E07C17600F581AD /* distorm.h */,
+				F97946811E07C17600F581AD /* mnemonics.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F97946821E07C17600F581AD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F97946831E07C17600F581AD /* config.h */,
+				F97946841E07C17600F581AD /* decoder.c */,
+				F97946851E07C17600F581AD /* decoder.h */,
+				F97946861E07C17600F581AD /* distorm.c */,
+				F97946871E07C17600F581AD /* instructions.c */,
+				F97946881E07C17600F581AD /* instructions.h */,
+				F97946891E07C17600F581AD /* insts.c */,
+				F979468A1E07C17600F581AD /* insts.h */,
+				F979468B1E07C17600F581AD /* mnemonics.c */,
+				F979468C1E07C17600F581AD /* operands.c */,
+				F979468D1E07C17600F581AD /* operands.h */,
+				F979468E1E07C17600F581AD /* prefix.c */,
+				F979468F1E07C17600F581AD /* prefix.h */,
+				F97946901E07C17600F581AD /* textdefs.c */,
+				F97946911E07C17600F581AD /* textdefs.h */,
+				F97946921E07C17600F581AD /* wstring.c */,
+				F97946931E07C17600F581AD /* wstring.h */,
+				F97946941E07C17600F581AD /* x86defs.c */,
+				F97946951E07C17600F581AD /* x86defs.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F97946611E07C0B700F581AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F97946C51E07C33600F581AD /* VifSupportingCode.h in Headers */,
+				F9FC69541E08156900914367 /* VifVnodeHashTable.h in Headers */,
+				F97946B31E07C17700F581AD /* prefix.h in Headers */,
+				F9FC69581E081F0100914367 /* md5_hash.h in Headers */,
+				F97946B71E07C17700F581AD /* wstring.h in Headers */,
+				F97946CB1E07C42A00F581AD /* VNodeHook.h in Headers */,
+				F97946A51E07C17600F581AD /* distorm.h in Headers */,
+				F9FC694C1E080EDF00914367 /* VifCoveringVnode.h in Headers */,
+				F97946BA1E07C17700F581AD /* CommonHashTable.h in Headers */,
+				F97946AE1E07C17700F581AD /* insts.h in Headers */,
+				F97946BC1E07C17700F581AD /* Common.h in Headers */,
+				F97946A61E07C17600F581AD /* mnemonics.h in Headers */,
+				F97946B91E07C17700F581AD /* x86defs.h in Headers */,
+				F97946A71E07C17600F581AD /* config.h in Headers */,
+				F97946B51E07C17700F581AD /* textdefs.h in Headers */,
+				F9FC69501E08103300914367 /* VifIOVnode.h in Headers */,
+				F97946C31E07C33600F581AD /* VifUndocumentedQuirks.h in Headers */,
+				F97946A31E07C17600F581AD /* FltFakeFSD.h in Headers */,
+				F97946A91E07C17600F581AD /* decoder.h in Headers */,
+				F97946A11E07C17600F581AD /* FsdFilter.h in Headers */,
+				F97946991E07C17600F581AD /* VmPmap.h in Headers */,
+				F97946C71E07C33600F581AD /* VifSparseFile.h in Headers */,
+				F97946B11E07C17700F581AD /* operands.h in Headers */,
+				F9FC695C1E0857DE00914367 /* VifVfsMntHook.h in Headers */,
+				F97946AC1E07C17700F581AD /* instructions.h in Headers */,
+				F979469B1E07C17600F581AD /* VFSHooks.h in Headers */,
+				F979469F1E07C17600F581AD /* Kauth.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F97946631E07C0B700F581AD /* FileSystem-Isolation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F979466E1E07C0B700F581AD /* Build configuration list for PBXNativeTarget "FileSystem-Isolation" */;
+			buildPhases = (
+				F979465F1E07C0B700F581AD /* Sources */,
+				F97946601E07C0B700F581AD /* Frameworks */,
+				F97946611E07C0B700F581AD /* Headers */,
+				F97946621E07C0B700F581AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FileSystem-Isolation";
+			productName = "FileSystem-Isolation";
+			productReference = F97946641E07C0B700F581AD /* FileSystem-Isolation.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F979465B1E07C0B700F581AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Slava Imameev";
+				TargetAttributes = {
+					F97946631E07C0B700F581AD = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F979465E1E07C0B700F581AD /* Build configuration list for PBXProject "FileSystem-Isolation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F979465A1E07C0B700F581AD;
+			productRefGroup = F97946651E07C0B700F581AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F97946631E07C0B700F581AD /* FileSystem-Isolation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F97946621E07C0B700F581AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F979465F1E07C0B700F581AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F97946A81E07C17600F581AD /* decoder.c in Sources */,
+				F97946B81E07C17700F581AD /* x86defs.c in Sources */,
+				F9FC69551E08156900914367 /* VifVnodeHashTable.cpp in Sources */,
+				F9FC694D1E080EDF00914367 /* VifCoveringVnode.cpp in Sources */,
+				F979469C1E07C17600F581AD /* VFSHooks.cpp in Sources */,
+				F9FC69591E081F0100914367 /* md5_hash.c in Sources */,
+				F979469A1E07C17600F581AD /* VmPmap.cpp in Sources */,
+				F97946B41E07C17700F581AD /* textdefs.c in Sources */,
+				F97946A01E07C17600F581AD /* Kauth.cpp in Sources */,
+				F97946B01E07C17700F581AD /* operands.c in Sources */,
+				F97946CC1E07C42A00F581AD /* VNodeHook.cpp in Sources */,
+				F97946A21E07C17600F581AD /* FsdFilter.cpp in Sources */,
+				F97946C81E07C33600F581AD /* VifSparseFile.cpp in Sources */,
+				F97946C41E07C33600F581AD /* VifUndocumentedQuirks.cpp in Sources */,
+				F97946A41E07C17600F581AD /* FltFakeFSD.cpp in Sources */,
+				F97946B61E07C17700F581AD /* wstring.c in Sources */,
+				F97946C61E07C33600F581AD /* VifSupportingCode.cpp in Sources */,
+				F97946AA1E07C17600F581AD /* distorm.c in Sources */,
+				F97946AB1E07C17600F581AD /* instructions.c in Sources */,
+				F97946AF1E07C17700F581AD /* mnemonics.c in Sources */,
+				F9FC695D1E0857DE00914367 /* VifVfsMntHook.cpp in Sources */,
+				F9FC69511E08103300914367 /* VifIOVnode.cpp in Sources */,
+				F97946B21E07C17700F581AD /* prefix.c in Sources */,
+				F97946BB1E07C17700F581AD /* CommonHashTable.cpp in Sources */,
+				F97946AD1E07C17700F581AD /* insts.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F979466C1E07C0B700F581AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					DBG,
+					_VIF_MACOSX_VFS_ISOLATION,
+					MACH_ASSERT_DISABLED,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F979466D1E07C0B700F581AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = _VIF_MACOSX_VFS_ISOLATION;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F979466F1E07C0B700F581AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				INFOPLIST_FILE = "FileSystem-Isolation/Info.plist";
+				MODULE_NAME = com.SlavaImameev.FileSystem_Isolation;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SlavaImameev.FileSystem-Isolation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		F97946701E07C0B700F581AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				INFOPLIST_FILE = "FileSystem-Isolation/Info.plist";
+				MODULE_NAME = com.SlavaImameev.FileSystem_Isolation;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SlavaImameev.FileSystem-Isolation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F979465E1E07C0B700F581AD /* Build configuration list for PBXProject "FileSystem-Isolation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F979466C1E07C0B700F581AD /* Debug */,
+				F979466D1E07C0B700F581AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F979466E1E07C0B700F581AD /* Build configuration list for PBXNativeTarget "FileSystem-Isolation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F979466F1E07C0B700F581AD /* Debug */,
+				F97946701E07C0B700F581AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F979465B1E07C0B700F581AD /* Project object */;
+}
