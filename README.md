@@ -4,6 +4,8 @@
 
 The license model is a BSD Open Source License. This is a non-viral license, only asking that if you use it, you acknowledge the authors, in this case Slava Imameev.
 
+The project uses the distorm disassembler https://github.com/gdabah/distorm which is now released under BSD license.
+
 ##Design and Implementation
 
 This is an I/O isolation filter for MacOS ( Mac OS X ). The idea is to intercept read and write requests and redirect them to an alternative storage. This provides an isolation layer for data flow.
