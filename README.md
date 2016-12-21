@@ -12,8 +12,8 @@ This project is a proof of concept and has been nether a subject of thorough tes
 
 The filter is based on the following projects
 
-https://github.com/slavaim/MacOSX-FileSystem-Filter
-https://github.com/slavaim/MacOSX-SparseFile-KernelMode
+https://github.com/slavaim/MacOSX-FileSystem-Filter  
+https://github.com/slavaim/MacOSX-SparseFile-KernelMode  
 
 The MacOSX-FileSystem-Filter project is used to implement filtering for VFS layer.
 The MacOSX-SparseFile-KernelMode is used to provide an alternative storage as a sparse file. 
@@ -122,7 +122,7 @@ Below are call stacks for read and write requests
 ##Usage
 
 To activate the isolation layer just load the kernel extension (kext) with the kextload command.
-For testing purposes the isolation layer intercepts requests to files on a removable drive mounted at /Volumes/Untitled/ . Sparse files are created in /work/isolation/ directory which must exist before the kextd is being loaded.
+For testing purposes the isolation layer intercepts requests to files on a removable drive mounted at /Volumes/Untitled . Sparse files are created in /work/isolation directory which must exist before the kextd is being loaded.
 These test setting are defined as
 
 ```
