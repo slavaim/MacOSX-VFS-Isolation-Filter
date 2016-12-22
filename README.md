@@ -8,7 +8,7 @@ The project uses the distorm disassembler https://github.com/gdabah/distorm whic
 
 ##Design and Implementation
 
-This is an I/O isolation filter for MacOS ( Mac OS X ). The idea is to intercept read and write requests and redirect them to an alternative storage. This provides an isolation layer for data flow.
+This is an I/O file system isolation filter for MacOS ( Mac OS X ). The idea is to intercept read and write requests and redirect them to an alternative storage. This provides an isolation layer for data flow.
 
 This project is a proof of concept and has never been a subject of thorough testing.
 
