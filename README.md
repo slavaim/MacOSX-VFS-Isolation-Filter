@@ -125,7 +125,7 @@ Below are call stacks for read and write requests
 
 To activate the isolation layer just load the kernel extension (kext) with the kextload command.
 For testing purposes the isolation layer intercepts requests to files on a removable drive mounted at /Volumes/Untitled . Sparse files are created in /work/isolation directory which must exist before the kextd is being loaded.
-These test setting are defined as
+These test settings are defined as
 
 ```
 const static char* TestPathPrefix = "/Volumes/Untitled/";
