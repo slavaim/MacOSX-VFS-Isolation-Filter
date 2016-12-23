@@ -4,21 +4,23 @@
 
 The license model is a BSD Open Source License. This is a non-viral license, only asking that if you use it, you acknowledge the authors, in this case Slava Imameev.
 
+The project uses the distorm disassembler https://github.com/gdabah/distorm which is now released under BSD license.
+
 ##Design and Implementation
 
-This is an I/O isolation filter for MacOS ( Mac OS X ). The idea is to intercept read and write requests and redirect them to an alternative storage. This provides an isolation layer for data flow.
+This is an I/O file system isolation filter for MacOS ( Mac OS X ). The idea is to intercept read and write requests and redirect them to an alternative storage. This provides an isolation layer for data flow. The possible applications for a filter are content analyzing, encryption or any advanced data flow modification.
 
-This project is a proof of concept and has been nether a subject of thorough testing.
+This project is a proof of concept and has never been a subject of thorough testing.
 
 The filter is based on the following projects
 
-https://github.com/slavaim/MacOSX-FileSystem-Filter
-https://github.com/slavaim/MacOSX-SparseFile-KernelMode
+https://github.com/slavaim/MacOSX-FileSystem-Filter  
+https://github.com/slavaim/MacOSX-SparseFile-KernelMode  
 
 The MacOSX-FileSystem-Filter project is used to implement filtering for VFS layer.
 The MacOSX-SparseFile-KernelMode is used to provide an alternative storage as a sparse file. 
 
-The implementation uses a technique similar to a stackable file system by initialising vnode objects to take control over file caching and mapped file operations. Such vnode is called a covering vnode as it covers(isolates) a vnode created by an underlying file system from I/O operations.
+The implementation uses a technique similar to a stackable file system by initialising vnode objects to take control over file caching and mapped file operations. Such vnode is called a covering vnode as it covers(isolates) a vnode created by an underlying file system from I/O operations. The covering vnode technique allows to implement a very flexible control over files as the isolation layer has a full control over vnodes visible to applications. The similar isolation technique for Windows is described in a series of articles from OSR - http://www.osronline.com/article.cfm?article=560  and http://www.osronline.com/article.cfm?article=571 . In case of Windows a file object (FILE_OBJECT) is initialized by the isolation layer.
 
 When the isolation filter detects a lookup operation it creates a covering vnode, below is a call stack for this case 
 
@@ -122,8 +124,8 @@ Below are call stacks for read and write requests
 ##Usage
 
 To activate the isolation layer just load the kernel extension (kext) with the kextload command.
-For testing purposes the isolation layer intercepts requests to files on a removable drive mounted at /Volumes/Untitled/ . Sparse files are created in /work/isolation/ directory which must exist before the kextd is being loaded.
-These test setting are defined as
+For testing purposes the isolation layer intercepts requests to files on a removable drive mounted at /Volumes/Untitled . Sparse files are created in /work/isolation directory which must exist before the kextd is being loaded.
+These test settings are defined as
 
 ```
 const static char* TestPathPrefix = "/Volumes/Untitled/";
