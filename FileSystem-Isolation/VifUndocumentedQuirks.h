@@ -19,6 +19,11 @@ void VifFreeUndocumentedQuirks();
 
 //--------------------------------------------------------------------
 
+task_t VifBsdProcToTask( __in proc_t proc );
+proc_t VifTaskToBsdProc( __in task_t task );
+
+//--------------------------------------------------------------------
+
 int VifDisablePreemption();
 
 void VifEnablePreemption( __in int cookie );

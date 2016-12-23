@@ -17,6 +17,7 @@
 #include "VifVfsMntHook.h"
 #include "FltFakeFSD.h"
 #include "VifCoveringVnode.h"
+#include "VifUndocumentedQuirks.h"
 
 //--------------------------------------------------------------------
 
@@ -41,6 +42,12 @@ VfsIsolationFilter::start(
 {
     
     Instance = this;
+    
+    if( ! VifInitUndocumentedQuirks() ){
+        
+        DBG_PRINT_ERROR( ( "VifInitUndocumentedQuirks() failed\n" ) );
+        goto __exit_on_error;
+    }
     
     if( kIOReturnSuccess != FltGetVnodeLayout() ){
         
@@ -190,6 +197,8 @@ void VfsIsolationFilter::free()
     FltVnodeHooksHashTable::DeleteStaticTable();
     
     VifSparseFile::sFreeSparseFileSubsystem();
+    
+    VifFreeUndocumentedQuirks();
     
     super::free();
 }

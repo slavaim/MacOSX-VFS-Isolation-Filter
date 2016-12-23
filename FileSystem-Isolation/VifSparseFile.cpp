@@ -68,9 +68,6 @@ IOReturn VifSparseFile::sInitSparseFileSubsystem()
     gVfsContextSuser = vfs_context_current();
     assert( gVfsContextSuser );
     
-    if( ! VifInitUndocumentedQuirks() )
-        return kIOReturnError;
-    
     InitializeListHead( &VifSparseFile::sSparseFileListHead );
     VifInitSynchronizationEvent( &VifSparseFile::sCachedNodeReaperEvent );
     VifInitSynchronizationEvent( &VifSparseFile::sCachedNodeReaperTerminatedEvent );
@@ -143,8 +140,6 @@ void VifSparseFile::sFreeSparseFileSubsystem()
     
     if( VifSparseFile::sSparseFileListLock )
         IORWLockFree( VifSparseFile::sSparseFileListLock );
-    
-    VifFreeUndocumentedQuirks();
 }
 
 //--------------------------------------------------------------------

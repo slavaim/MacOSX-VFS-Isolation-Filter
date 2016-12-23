@@ -2100,8 +2100,7 @@ VifCoveringFsd::processWrite(
             // for reference see aio_work_thread()
             //
             if( uio_isuserspace( ap->a_uio ) )
-                //writerTask = vfs_context_proc( context )? VifBsdProcToTask( vfs_context_proc( context ) ): current_task();
-                writerTask = current_task();
+                writerTask = vfs_context_proc( context )? VifBsdProcToTask( vfs_context_proc( context ) ): current_task();
             else
                 writerTask = kernel_task;
             
@@ -2341,8 +2340,7 @@ VifCoveringFsd::processRead(
             // for reference see aio_work_thread()
             //
             if( uio_isuserspace( ap->a_uio ) )
-                //writerTask = vfs_context_proc( context )? VifBsdProcToTask( vfs_context_proc( context ) ): current_task();
-                writerTask = current_task();
+                writerTask = vfs_context_proc( context )? VifBsdProcToTask( vfs_context_proc( context ) ): current_task();
             else
                 writerTask = kernel_task;
             
