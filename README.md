@@ -1,12 +1,12 @@
 # MacOSX-VFS-Isolation-Filter
 
-##License
+## License
 
 The license model is a BSD Open Source License. This is a non-viral license, only asking that if you use it, you acknowledge the authors, in this case Slava Imameev.
 
 The project uses the distorm disassembler https://github.com/gdabah/distorm which is now released under BSD license.
 
-##Design and Implementation
+## Design and Implementation
 
 This is an I/O file system isolation filter for MacOS ( Mac OS X ). The idea is to intercept read and write requests and redirect them to an alternative storage. This provides an isolation layer for data flow. The possible applications for a filter are content analyzing, encryption or any advanced data flow modification.
 
@@ -121,7 +121,7 @@ Below are call stacks for read and write requests
     frame #8: 0xffffff802844dcb2 kernel`unix_syscall64(state=0xffffff8035f34700) + 610 at systemcalls.c:366
 ```
 
-##Usage
+## Usage
 
 To activate the isolation layer just load the kernel extension (kext) with the kextload command.
 For testing purposes the isolation layer intercepts requests to files on a removable drive mounted at /Volumes/Untitled . Sparse files are created in /work/isolation directory which must exist before the kextd is being loaded.
