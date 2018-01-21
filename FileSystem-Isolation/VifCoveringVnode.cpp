@@ -171,7 +171,7 @@ VifCoveringFsd::VifFsdHookCreateCoveringVnodeInternal(
     // it seems okay to use the covered fsd mount structure as all requests
     // to the covered fsd will be intercepted so it will be unaware about
     // attached vnodes, the system traverses all vnodes for a mounted
-    // fsd in functions such as vflush() and iterate_vnodes() - the latter
+    // fsd in functions such as vflush() and vnode_iterate() - the latter
     // is the most dangerous as it allows the covered fsd to see covering vnodes
     // but there is a trick it skips vnodes with NULL v_data fields, so if we
     // set this field to NULL our vnode will not be visible to underlying FSD as
