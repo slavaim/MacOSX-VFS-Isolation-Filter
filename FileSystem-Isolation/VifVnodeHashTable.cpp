@@ -494,7 +494,7 @@ VifVnodeHashTable::CreateStaticTable()
 void
 VifVnodeHashTable::DeleteStaticTable()
 {
-    if( NULL != sVnodesHashTable );
+    if( NULL != sVnodesHashTable )
         sVnodesHashTable->release();
     
     sVnodesHashTable = NULL;
