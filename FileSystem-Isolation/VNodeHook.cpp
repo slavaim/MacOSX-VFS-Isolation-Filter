@@ -2187,7 +2187,7 @@ VifFsdMknodHook(struct vnop_mknod_args *ap)
     
     int (*orig)(struct vnop_mknod_args *ap);
     
-    orig = (int (*)(struct vnop_mknod_args*))VifGetOriginalVnodeOp( apc.ap->a_dvp, FltVopEnum_mkdir );
+    orig = (int (*)(struct vnop_mknod_args*))VifGetOriginalVnodeOp( apc.ap->a_dvp, FltVopEnum_mknod );
     assert( orig );
     
     error = orig( apc.ap );
