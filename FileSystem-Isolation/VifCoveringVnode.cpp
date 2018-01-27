@@ -2568,6 +2568,7 @@ VifCoveringFsd::processPagingIO(
                 assert( !ubcAbortError );
             }
             
+            upl = NULL;
             RC = EINVAL;
             goto __exit;
         } // end if (fileOffset < 0 || fileOffset >= filesize ||
