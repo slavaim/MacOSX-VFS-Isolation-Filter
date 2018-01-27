@@ -2482,7 +2482,7 @@ VifCoveringFsd::processPagingIO(
     upl_t               upl;
     size_t              size;
     u_int               ioSize;
-	int                 roundedSize;
+    int                 roundedSize;
     off_t               maxSize;
     off_t               fileSize;
     bool                commitUPL;
@@ -2551,19 +2551,22 @@ VifCoveringFsd::processPagingIO(
         if (fileOffset < 0 || fileOffset >= fileSize ||
             (fileOffset & PAGE_MASK_64) || (size & PAGE_MASK) || (uplOffset & PAGE_MASK)){
             
-            int ubcAbortError;
-            
             //
             // we are freeing now so do not free upl in releaseIOArgs()
             //
             assert( NULL == args.upl );
             
-            ubcAbortError = ubc_upl_abort_range( upl, uplOffset, size, UPL_ABORT_FREE_ON_EMPTY |
-                                                 (( 0x1 == ap->flags.read ) ?  UPL_ABORT_ERROR : UPL_ABORT_DUMP_PAGES) );
-            upl = NULL;
-            commitUPL = false; // already done
-            
-            assert( !ubcAbortError );
+            if (commitUPL) {
+                
+                int ubcAbortError;
+                
+                assert(upl);
+                ubcAbortError = ubc_upl_abort_range( upl, uplOffset, size, UPL_ABORT_FREE_ON_EMPTY |
+                                                    (( 0x1 == ap->flags.read ) ?  UPL_ABORT_ERROR : UPL_ABORT_DUMP_PAGES) );
+                commitUPL = false; // already done
+                
+                assert( !ubcAbortError );
+            }
             
             RC = EINVAL;
             goto __exit;
@@ -2675,7 +2678,7 @@ VifCoveringFsd::processPagingIO(
                 
                 off_t f_offset;
                 int   offset;
-                int   isize; 
+                int   isize;
                 int   pg_index;
                 int   i = 0x0;
                 int   upl_flags = UPL_FLAGS_NONE;
@@ -2706,7 +2709,7 @@ VifCoveringFsd::processPagingIO(
                     
                 } else {
                     
-                    upl_flags = UPL_FLAGS_NONE;
+                    upl_flags = UPL_UBC_PAGEIN | UPL_RET_ONLY_ABSENT;
                     
                 }
                 
@@ -2748,8 +2751,8 @@ VifCoveringFsd::processPagingIO(
                 //
                 size = roundedSize;
                 
-                pg_index = ((isize) / PAGE_SIZE);
-                
+                pg_index = ((roundedSize) / PAGE_SIZE);
+                assert(pg_index > 0);
                 if( 0x1 == ap->flags.write ){
                     
                     // 
@@ -2775,16 +2778,40 @@ VifCoveringFsd::processPagingIO(
                     if( !dirtyPages )
                         break;
                     
-                } // end if( 0x1 == ap->flags.write )
+                } else { // end if( 0x1 == ap->flags.write )
+                    //
+                    // Scan from the back to find the last page in the UPL
+                    //
+                    bool pagesPresent = true;
+                    while( pg_index > 0 ){
+                        
+                        if( upl_page_present(pl, --pg_index) )
+                            break;
+                        
+                        if (pg_index == 0) {
+                            
+                            //
+                            // oops, no pages were found
+                            //
+                            pagesPresent = false;
+                            break;
+                        }
+                        
+                    }
+                    
+                    if( !pagesPresent )
+                        break;
+                }
                 
                 // 
                 // initialize the offset variables before we touch the UPL.
                 // a_f_offset is the position into the file, in bytes
                 // offset is the position into the UPL, in bytes
                 // pg_index is the pg# of the UPL we're operating on.
-                // isize is the offset into the UPL of the last non-clean page. 
+                // isize is the offset into the UPL after the last non-clean page
+                // in case of the write or the end of the range to pagein for read.
                 //
-                isize = ((pg_index + 1) * PAGE_SIZE);	
+                isize = ((pg_index + 1) * PAGE_SIZE);
                 
                 offset = 0;
                 pg_index = 0;
@@ -2813,6 +2840,10 @@ VifCoveringFsd::processPagingIO(
                         continue;
                     }
                     
+                    //
+                    // pg_index is an index of the first present page
+                    //
+                    
                     if( 0x1 == ap->flags.write ){
                         
                         if( !upl_dirty_page( pl, pg_index ) ){
@@ -2827,8 +2858,8 @@ VifCoveringFsd::processPagingIO(
                         
                     } // end if( 0x1 == args->flags.write )
                     
-                    // 
-                    // We know that we have at least one dirty page.
+                    //
+                    // We know that we have at least one (dirty or present) page.
                     // Now checking to see how many in a row we have
                     //
                     num_of_pages = 1;
@@ -2836,7 +2867,14 @@ VifCoveringFsd::processPagingIO(
                     
                     while( 0x0 != xsize ){
                         
-                        if( !upl_dirty_page( pl, pg_index + num_of_pages) )
+                        //
+                        // upl_dirty_page is for pageout as we must not flush clean pages
+                        // upl_page_present is for pagein as we can pagein into resident pages only
+                        //
+                        if( 0x1 == ap->flags.write && !upl_dirty_page( pl, pg_index + num_of_pages) )
+                            break;
+                        
+                        if( 0x1 == ap->flags.read && !upl_page_present(pl, pg_index + num_of_pages) )
                             break;
                         
                         num_of_pages++;
@@ -3049,19 +3087,19 @@ VifCoveringFsd::processPagingIO(
         
         upl_size_t uplSizeLeft = (size > roundedSize) ? roundedSize : size;
         
-		if( KERN_SUCCESS != RC ){
+        if( KERN_SUCCESS != RC ){
             
-			ubcError = ubc_upl_abort_range( upl, uplOffset, uplSizeLeft, UPL_ABORT_FREE_ON_EMPTY );
+            ubcError = ubc_upl_abort_range( upl, uplOffset, uplSizeLeft, UPL_ABORT_FREE_ON_EMPTY );
             
-		} else {
+        } else {
             
             int commitFlags = 0x0;
             
             if( 0x1 == ap->flags.read )
                 commitFlags |= UPL_COMMIT_CLEAR_DIRTY;
             
-			ubcError = ubc_upl_commit_range( upl, uplOffset, uplSizeLeft,
-                                             UPL_COMMIT_FREE_ON_EMPTY | commitFlags );
+            ubcError = ubc_upl_commit_range( upl, uplOffset, uplSizeLeft,
+                                            UPL_COMMIT_FREE_ON_EMPTY | commitFlags );
         }
         
         assert( !ubcError );
